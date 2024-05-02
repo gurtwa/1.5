@@ -1,0 +1,244 @@
+@font-face {
+  font-family: 'TTLakes';
+  src: local("TTLakes-Bold"), url(../fonts/TT-Lakes-Bold.woff2) format("woff2"), url(../fonts/TT-Lakes-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'TTLakes';
+  src: local("TTLakes-Medium"), url(../fonts/TT-Lakes-Medium.woff2) format("woff2"), url(../fonts/TT-Lakes-Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'TTLakes';
+  src: local("TTLakes-Regular"), url(../fonts/TT-Lakes-Regular.woff2) format("woff2"), url(../fonts/TT-Lakes-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+body {
+  font-family: 'TTLakes', sans-serif;
+  min-width: 320px;
+  max-width: 1440px;
+  overflow-x: hidden;
+  font-style: normal;
+  margin: 0 auto;
+  background: #f8f8f8;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.section{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.slider{
+  gap: 0px;
+  opacity: 0px;
+  padding: 16px;
+}
+
+.slider-title {
+  font-family: 'TTLakes', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.20000000298023224px;
+  text-align: left;
+  color: #7E7E82;
+  font-weight: 300;
+}
+
+.swiper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.5s;
+  padding-top: 16px;
+}
+
+.swiper-slide {
+  max-width: 220px;
+  min-width: 220px;
+  height: 72px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 10px;
+  align-items: center;
+}
+
+img {
+min-width: 32px;
+max-width: 100px;
+max-height: 70px;
+padding-left: 5px;
+}
+
+.button-go {
+  width: 40px;
+  height: 40px;
+  background-image: url("../svg/go.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s;
+  border-radius: 50%;
+}
+
+.button-go:hover {
+  filter: brightness(0.8);
+}
+
+.button-go:focus {
+  outline: none;
+}
+
+.button-go:active {
+  transform: scale(0.9);
+}
+
+.expend {
+  transition: all 0.2s ease;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.expend__button-image {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background-image: url('../svg/expand.svg');
+  background-size: cover;
+  border: none;
+}
+.expend:focus {
+  outline-offset: 1px;
+  border-radius: 1px;
+  
+}
+
+.expend:hover {
+  opacity: 0.5;
+}
+
+.expend:active {
+  opacity: 1;
+  color: #000;
+  outline: none;
+  transform: scale(1.1);
+
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: #888;
+}
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 320px;
+    max-height: 234px;
+    gap: 0px;
+    opacity: 0px;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+  }
+  .expend {
+    display: none;
+  }
+  .slider-title {
+    word-wrap: break-word;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1120px) {
+  .swiper-pagination {
+    display: none;
+  }    
+  .swiper-slide {
+    width: calc(50% - 20px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .swiper-slide:nth-child(n + 7) {
+    display: none;
+  }
+  .swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .swiper-pagination {
+    display: none;
+  }
+  .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .swiper-slide {
+    width: 100%;
+  }
+  .swiper-slide:nth-child(n + 9) {
+    display: none;
+  }
+}
